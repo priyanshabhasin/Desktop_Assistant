@@ -68,17 +68,37 @@ if __name__ == "__main__":
             webbrowser.open("stackoverflow.com")
 
         elif 'the time' in query:
-            strTime=datetime.datetime.now().strftime("%H hours%M minutes and%S seconds")
+            strTime=datetime.datetime.now().strftime("%Hhours %Mminutes and %Sseconds")
+            print(strTime)
             speak(f"the time is:{strTime}")
 
         elif 'open code' in query:
             codePath="C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
         elif 'what is your name' in query:
-            speak("My name is jarvis!how can I help u mam")
+            print("My name is Jarvis.How can I help u?")
+            speak("My name is jarvis!how can I help u")
         elif 'how are you' in query:
+            print("I am good...What about you?")
             speak("I am good...what about you")
         elif 'you are a very good assistant' in query:
+            print("Thank you")
             speak("Thank you")
-        elif 'bye jarvis' in query:
-            speak('Bye!have a nice day')
+        elif "exit" in query or "bye" in query or "sleep" in query:
+            print("Ok Bye")
+            speak("Ok bye") 
+            break
+        elif "who are you" in query or "define yourself" in query: 
+            PleaseSpeak = '''Hello, I am Jarvis. Your personal Assistant. 
+                            I am here to make your life easier. You can command me to perform 
+                            various tasks such as searching wikipedia  or opening applications etcetra'''
+            print(PleaseSpeak)
+            speak(PleaseSpeak)
+        elif "who made you" in query or "created you" in query: 
+            print("I am created by Ms.Priyansha Bhasin")
+            speak("I am created by Ms.Priyansha Bhasin")
+        elif 'open word' in query or 'open microsoft office' in query:
+            codePath="C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office"
+            os.startfile(codePath)
+        
+  
